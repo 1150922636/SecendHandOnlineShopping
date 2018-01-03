@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="templates/template.xhtml">
+    <ui:define name="headScripts">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <title>主页 | 小二淘</title>   
+    </ui:define>
+    
+    <ui:define name="content">
+        <section id="slider"><!--slider-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#slider-carousel" data-slide-to="1"></li>
+                                <li data-target="#slider-carousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="col-sm-6">
+                                        <h1><span>今日小二淘</span>-图书节</h1>
+                                        <h2>《平凡的世界》新书未启封</h2>
+                                        <p><span>大V:</span>珍藏版没舍得看，即将毕业，低价转手</p>
+                                        <a href="/online_shoping-master/product-details.xhtml"><button type="button" class="btn btn-default get" >我要抢喽</button></a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
+                                        <img src="images/home/pricing.png"  class="pricing" alt="" />
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <div class="col-sm-6">
+                                        <h1><span>特惠</span>-《计算机网络》</h1>
+                                        <h2>9.5成新</h2>
+                                        <p><span>匿名:</span>这本书太难，我实在学不会，放弃了，转手给大神 </p>
+                                        <a href="/online_shoping-master/product-details.xhtml"><button type="button" class="btn btn-default get" >我要抢喽</button></a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
+                                        <img src="images/home/pricing.png" class="pricing" alt="" />
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-sm-6">
+                                        <h1><span>特惠</span>-《库里传》</h1>
+                                        <h2>珍藏版未启封</h2>
+                                        <p><span>Bigbabol:</span>买的书一直没机会看,快毕业了，想转手了 </p>
+                                        <a href="/online_shoping-master/product-details.xhtml"><button type="button" class="btn btn-default get" >我要抢喽</button></a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
+                                        <img src="images/home/pricing.png"  class="pricing" alt="" />
+                                    </div>
+                                </div>
+
+ 
+
+                            </div>
+
+                            <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!--/slider-->
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                            <h2>分类</h2>
+                            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                                <c:forEach items="#{categoryManager.allCat}" var="catName">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <!--<a href="#{request.contextPath}/category/#{catName.toLowerCase()}">#{catName}</a>-->
+                                            <a href="#{request.contextPath}/products.xhtml">#{catName}</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                                </c:forEach>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                运动装备
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="sportswear" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+
+                                                <li><a href="#">耐克 </a></li>
+                                                <li><a href="#">安德玛</a></li>
+                                                <li><a href="#">阿迪 </a></li>
+                                                <li><a href="#">彪马</a></li>
+                                                <li><a href="#">亚瑟士 </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                男生
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="mens" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="#">王者账号</a></li>
+                                                <li><a href="#">吃鸡账号</a></li>
+                                                <li><a href="#">健身卡</a></li>
+                                                <li><a href="#">网游代打</a></li>
+                                                <li><a href="#">运动物品</a></li>
+                                                <li><a href="#">其他</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                女生
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="womens" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="#">化妆品</a></li>
+                                                <li><a href="#">口红</a></li>
+                                                <li><a href="#">高跟鞋</a></li>
+                                                <li><a href="#">正装</a></li>
+                                                <li><a href="#">其他</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">乐器</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">图书</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">衣服</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">裤子</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">鞋子</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">电子数码</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">小物件</a></h4>
+                                    </div>
+                                </div>
+                            </div><!--/category-products-->
+
+                            <div class="brands_products"><!--brands_products-->
+                                <h2>今日可竞价</h2>
+                                <div class="brands-name">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="#"> <span class="pull-right">(50)</span>校园代步</a></li>
+                                        <li><a href="#"> <span class="pull-right">(56)</span>电子数码</a></li>
+                                        <li><a href="#"> <span class="pull-right">(27)</span>衣物鞋子</a></li>
+                                        <li><a href="#"> <span class="pull-right">(32)</span>图书资料</a></li>
+                                        <li><a href="#"> <span class="pull-right">(5)</span>门票券务</a></li>
+                                        <li><a href="#"> <span class="pull-right">(9)</span>小物件</a></li>
+                                        <li><a href="#"> <span class="pull-right">(4)</span>其他</a></li>
+                                    </ul>
+                                </div>
+                            </div><!--/brands_products-->
+
+                            <div class="price-range"><!--price-range-->
+                                <h2>心理可承受</h2>
+                                <div class="well text-center">
+                                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="20" data-slider-value="[250,450]" id="sl2" ><br />
+                                        <b class="pull-left">￥ 0</b> <b class="pull-right">￥ 1000</b>
+                                    </input>
+                                </div>
+                            </div><!--/price-range-->
+                            
+                             <div class="price-range">
+                                <div class="well text-center">
+                                   <img src="images/home/shipping1.png" alt="" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9 padding-right">
+                        <div class="features_items"><!--features_items-->
+                            <h2 class="title text-center">今日可捡漏</h2>
+                            <c:forEach items="#{displayProductManager.allProduct}"
+                                       var="p">
+                                <div class="col-sm-4">
+                                    <h:form>
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <h:graphicImage name="#{p.prodUrl}"
+                                                                    library="images"/>
+                                                    <h2>￥#{p.prodPrice}</h2>
+                                                    <p>#{p.prodDesc}</p>
+                                                    <p:commandButton action="#{shoppingCart.addToCart(p)}" class="btn btn-default add-to-cart" ajax="false" value="加入购物车"><i class="fa fa-shopping-cart"></i></p:commandButton>
+                                                </div>
+                                            </div>
+                                            <div class="choose">
+                                                <ul class="nav nav-pills nav-justified">
+                                                    <li><a href="#"><i class="fa fa-plus-square"></i>我要收藏</a></li>
+                                                    <li><a href="#"><i class="fa fa-plus-square"></i>比较比较</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </h:form>
+                                </div>
+                            </c:forEach>
+
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="images/home/product3.jpg" alt="" />
+                                            <h2>￥56</h2>
+                                            <p>今日小二淘特惠</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                        </div>
+
+                                    </div>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>我要收藏</a></li>
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>比较比较</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="images/home/product4.jpg" alt="" />
+                                            <h2>￥56</h2>
+                                            <p>今日小二淘特惠</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                        </div>
+                                        <img src="images/home/new.png" class="new" alt="" />
+                                    </div>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>我要收藏</a></li>
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>比较比较</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="images/home/product6.jpg" alt="" />
+                                            <h2>￥56</h2>
+                                            <p>今日小二淘特惠</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                        </div>
+                                        <img src="images/home/new.png" class="new" alt="" />
+                                    </div>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>我要收藏</a></li>
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>比较比较</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+</div>
+                        <div class="recommended_items"><!--recommended_items-->
+                            <h2 class="title text-center">recommended items</h2>
+
+                            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="item active">	
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="images/home/recommend1.jpg" alt="" />
+                                                        <h2>￥56</h2>
+                                                        <p>今日小二淘特惠</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="images/home/recommend2.jpg" alt="" />
+                                                        <h2>￥56</h2>
+                                                        <p>今日小二淘特惠</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="images/home/recommend3.jpg" alt="" />
+                                                        <h2>￥56</h2>
+                                                        <p>今日小二淘特惠</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">	
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="images/home/recommend1.jpg" alt="" />
+                                                        <h2>￥56</h2>
+                                                        <p>今日小二淘特惠</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="images/home/recommend2.jpg" alt="" />
+                                                        <h2>￥56</h2>
+                                                        <p>今日小二淘特惠</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="images/home/recommend3.jpg" alt="" />
+                                                        <h2>￥56</h2>
+                                                        <p>今日小二淘特惠</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>			
+                            </div>
+                        </div><!--/recommended_items-->
+
+                    </div>
+                </div>
+        </section>       
+    </ui:define>
+</ui:composition>

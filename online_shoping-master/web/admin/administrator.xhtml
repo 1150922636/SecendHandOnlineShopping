@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="headScripts">
+                <title>Login Page</title>
+            </ui:define>
+            <ui:define name="content">
+                <section id="form"><!--form-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-1">
+                                <div class="login-form" style="font-size:30px"><!--login form-->
+                                    <h2>亲爱的管理员 #{login.getUser().username},您好！</h2>
+                                    <h2>您辛苦的工作就是我们服务质量的保障</h2><br/>
+
+                                    <h:outputLink id="image-link-id"  value="/online_shoping-master/admin/ListProducts.xhtml" target="_blank">  
+                                        <h:outputText value="全部商品信息"></h:outputText>  
+                                    </h:outputLink><br/>
+                                    <h:outputLink id="image-link-id" value="/online_shoping-master/admin/ListOrder.xhtml" target="_blank">  
+                                        <h:outputText value="订单信息"></h:outputText>  
+                                    </h:outputLink><br/>
+                                    <h:outputLink id="image-link-id" value="/online_shoping-master/admin/addCategory.xhtml" target="_blank">  
+                                        <h:outputText value="增加商品类别"></h:outputText>  
+                                    </h:outputLink><br/>
+                                    <h:outputLink id="image-link-id" value="/online_shoping-master/admin/addSubcat.xhtml" target="_blank">  
+                                        <h:outputText value="修改商品类别"></h:outputText>  
+                                    </h:outputLink><br/>
+                                    <h:outputLink id="image-link-id" value="/online_shoping-master/admin/addProduct.xhtml" target="_blank">  
+                                        <h:outputText value="修改商品信息"></h:outputText>  
+                                    </h:outputLink><br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+</html>

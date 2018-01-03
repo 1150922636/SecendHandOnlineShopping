@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/07/2017 8:14:19 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Product" table="product" catalog="java_online_shop" optimistic-lock="version">
+        <id name="prodId" type="java.lang.Integer">
+            <column name="prod_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="subCategory" class="entity.SubCategory" fetch="select">
+            <column name="sub_cat_id" not-null="true" />
+        </many-to-one>
+        <property name="prodName" type="string">
+            <column name="prod_name" length="45" not-null="true" />
+        </property>
+        <property name="prodQty" type="int">
+            <column name="prod_qty" not-null="true" />
+        </property>
+        <property name="prodPrice" type="double">
+            <column name="prod_price" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="prodUrl" type="string">
+            <column name="prod_url" length="45" not-null="true" />
+        </property>
+        <property name="prodDesc" type="string">
+            <column name="prod_desc" length="65535" not-null="true" />
+        </property>
+        <set name="orderDetails" table="order_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="prod_id" not-null="true" />
+            </key>
+            <one-to-many class="entity.OrderDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

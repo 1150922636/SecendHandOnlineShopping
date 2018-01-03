@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="headScripts">
+                <title>reigster Page</title>
+            </ui:define>
+            <ui:define name="content">
+                    <div class="container" >
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-1">
+                                <div class="login-form"><!--login form-->
+                                    <h:form></h:form>
+                                    <h:form>
+                                        <h2>欢迎客官加入小二淘！</h2>
+                                        <h:messages id="messages"/>
+                                        <h:outputLabel for="userName"
+                                                       value="名字: " />
+                                        <h:inputText id='userName' 
+                                                     a:placeholder="请输入您的用户名"
+                                                     value='#{userManager.user.username}'/>
+                                        <h:outputLabel for="contact_num"
+                                                       value="电话 " />
+                                        <h:inputText id='contact_num' 
+                                                     a:placeholder="请输入正确电话号"
+                                                     value='#{userManager.user.contactNum}'/>
+                                        <h:outputLabel for="password"
+                                                       value="密码: "/>
+                                        <h:inputSecret id="password" 
+                                                       a:placeholder="请输入您的密码"
+                                                       value="#{userManager.user.pass}"/>
+                                        <span style="font-weight: bold">确认密码:</span><br/>
+                                        <input type="password" id="password_agin" 
+                                                       placeholder="都是套路，One more agin~"
+                                                       />
+                                        <p:commandButton
+                                            value="注册"
+                                            action="#{userManager.addUser()}"
+                                            ajax="false"
+                                            styleClass="btn btn-default"
+                                            />
+                                    </h:form>
+                                </div><!--/login form-->
+                            </div>
+                        </div>
+                    </div>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Products view</title>
+        <style>
+            .product{
+                width:150px;
+                height: 200px;
+                float: left;
+                margin-right: 10px;
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+        <h:form id="form">
+            <p:panel header="我的购物车">
+                <h:outputText value="#{shoppingCart.cartsize} #{shoppingCart.item}"
+                              id="cart"  />
+                <h:outputLink value="cart.xhtml">
+                    查看购物车</h:outputLink>
+            </p:panel>
+            <p:dataGrid var="p" value="#{displayProductManager.selectedProduct}"
+                        columns="3" rows="10" paginator="true" id="p"
+                        paginatorTemplate="{FirstPageLink} {PreviousPageLink} {CurrentPageReport} {PageLinks} {NextPageLink} {LastPageLink}"
+                        rowsPerPageTemplate="6,12,16">
+                <f:facet name="header">
+                    <h:outputLabel value="全部宝贝"/>
+                </f:facet>
+                <p:panel header="宝贝名称: #{p.prodName}">
+                    <h:panelGrid columns="1">
+                        <p:graphicImage library="images" 
+                                        name="#{p.prodUrl}"
+                                        height="150"
+                                        />
+                        <h:outputText value="价格: #{p.prodPrice}"/>
+                        <!--<p:commandLink update=":form:pro" oncomplete="PF('proDetails').show()"
+                                       title="View details">
+                            <h:outputText styleClass="ui-icon ui-icon-search"/>
+                            <f:setPropertyActionListener value="#{p}" target="${displayProductManager.selectedProduct}"/>
+                        </p:commandLink>-->
+                        <p:commandButton action="#{shoppingCart.addToCart(p)}"
+                                         value="加入购物车" ajax="false">
+                        </p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+            </p:dataGrid>
+
+            <!--<p:dialog header="Product Info" widgetVar="proDetails" modal="true"
+                      showEffect="fade" hideEffect="fade" rendererType="false"
+                      >
+                <p:outputPanel id="pro">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <h:graphicImage name="#{displayProductManager.selectedProduct.prodUrl}" library="images"
+                                            width="200"/>
+                        </f:facet>
+                        <h:outputText value="Description"></h:outputText>
+                        <h:outputText value="#{displayProductManager.selectedProduct.prodName}"></h:outputText>
+                    </p:panelGrid>
+                </p:outputPanel>
+            </p:dialog> -->
+        </h:form>
+
+    </h:body>
+</html>

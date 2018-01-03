@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Order Manager</title>
+    </h:head>
+    <h:body>
+        <p:dataTable value="#{OrderManager.allOrders}"
+                     var="orders"
+                     rows="5">
+            <p:column headerText="Order id">
+                <p:outputLabel value="#{orders.orderId}" />
+            </p:column>
+            <p:column headerText="Order Details">
+                <p:outputLabel value="#{orders.orderDetail}" />
+            </p:column>
+            <p:column headerText="Order's date">
+                <p:outputLabel value="#{orders.orderDate}" />
+            </p:column>
+            <p:column headerText="Order's Price">
+                <p:outputLabel value="#{orders.totalPrice}" />
+            </p:column>
+            <p:column headerText="Order's status">
+                <p:outputLabel value="#{orders.orderStatus}" />
+            </p:column>
+            <p:column headerText="actions">
+                <h:form>
+                    <p:panelGrid columns="2"  id="forautowidth">
+                        <h:commandButton value="Delete" 
+                                       action="#{OrderManager.deleteOrder}"/>        
+                    </p:panelGrid>
+                </h:form>                    
+            </p:column>
+        </p:dataTable>
+    </h:body>
+</html>
+

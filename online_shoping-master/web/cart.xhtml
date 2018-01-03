@@ -1,0 +1,73 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core" 
+    template="/templates/template.xhtml">
+    <ui:define name="headScripts">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Cart page</title>
+    </ui:define>    
+    <ui:define name="content">
+        <div class="container">
+            <h:form id="form">
+                <p:dataTable var="cart" value="#{shoppingCart.cart}"
+                             rows="10">
+                    <f:facet name="header">
+                        <h:outputLabel value="我的购物车:"/>
+                    </f:facet>
+                    <p:column headerText="宝贝名称">
+                        <p:outputLabel value="#{cart.p.prodName}" />
+                    </p:column>
+                    <p:column headerText="数量">
+                        <p:inputText value="#{cart.quantity}" />
+                    </p:column>
+                    <!--<p:column headerText="Quantity">
+                        <p:selectOneMenu id="quantity" value="#{cart}" style="width:125px">
+                            <f:selectItem itemLabel="Select One" itemValue="" />
+                            <ui:repeat var="i" value="#{util.generate(1,cart.p.prodQty)}" >
+                                <f:selectItem itemLabel="#{i}" itemValue="#{i}" />
+                            </ui:repeat>
+                        </p:selectOneMenu>
+                    </p:column>-->
+                    <p:column headerText="价格">
+                        <p:outputLabel value="#{cart.p.prodPrice}" />
+                    </p:column>
+                    <p:column headerText="长啥样" style="text-align: center;">
+                        <h:graphicImage name="#{cart.p.prodUrl}" library="images"
+                                        width="50" height="60" />
+                    </p:column>
+                    <p:column width="80" headerText="不要嘞" style="text-align: center;">
+                        <p:commandButton icon="ui-icon-trash"
+                                         onclick="return confirm('客官，您辛辛苦苦淘来的，确定不要了？');"
+                                         update="@form"
+                                         action="#{shoppingCart.removeFromCart(cart)}"/>
+                    </p:column>
+                    <f:facet name="footer">
+                        膜拜土豪，共 : <h:outputLabel value="#{shoppingCart.total}"/>
+                    </f:facet>
+                </p:dataTable>
+                <p:commandButton value="刷新" 
+                                 styleClass="btn btn-default"
+                                 action="#{shoppingCart.updateCart()}"
+                                 icon="fa fa-edit"
+                                 ajax="false"/>
+                <h:outputLink value="index.xhtml" styleClass="btn btn-default"
+                                 >
+                    接着逛逛
+                </h:outputLink>
+                <p:commandButton value="小二，结账！" 
+                                 action="#{shoppingCart.payment()}"
+                                 ajax="false"/>
+                
+                <!--<h:outputLink value="paytype.xhtml">-->
+                <!--Process Cart-->
+                <!--</h:outputLink>-->    
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+

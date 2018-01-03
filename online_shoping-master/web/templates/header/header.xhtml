@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition>
+            <header id="header"><!--header-->
+            <div class="header_top"><!--header_top-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="contactinfo">
+                                <ul class="nav nav-pills">
+                                    <li><a href="#"><i class="fa fa-star"></i> 微博：那晚航班</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> 1150922636@qq.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="social-icons pull-right">
+                                <h6>更多详情，欢迎联系我们哦</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/header_top-->
+
+            <div class="header-middle"><!--header-middle-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="logo pull-left">
+                                <img src="${request.contextPath}/images/home/xet.png" alt=""/>
+                                <a href="#{request.contextPath}/"><img src="${request.contextPath}/images/home/logo.png" alt="" /></a>
+                                
+                                <div class="btn-group">
+                                    
+                                   <h4>专注青大二手</h4>
+                                    <!--<h5>在这里遇见你的Ta</h5>-->
+                                </div>
+                            </div>
+                            <div class="btn-group pull-right">
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="shop-menu pull-right">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/online_shoping-master/admin/userAdd.xhtml"><i class="fa fa-user"></i>我要发布</a></li>
+                                    <li><a href="#"><i class="fa fa-star"></i>我的收藏</a></li>
+                                    <li><a href="https://auth.alipay.com/login/index.htm" target="_blank"><i class="fa fa-crosshairs"></i>付款</a></li>
+                                    <li><a href="/online_shoping-master/cart.xhtml"><i class="fa fa-shopping-cart"></i>购物车</a></li>
+                                    <li><a href="/online_shoping-master/admin/login.xhtml" id="login"><i class="fa fa-lock"></i>登录</a></li>
+                                    <li><a href="/online_shoping-master/admin/register.xhtml"><i class="fa fa-linkedin"></i> 注册</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/header-middle-->
+
+            <div class="header-bottom"><!--header-bottom-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="mainmenu pull-left">
+                                <ul class="nav navbar-nav collapse navbar-collapse">
+                                    <li><a href="#{request.contextPath}/" class="active">主页</a></li>
+                                    <li class="dropdown"><a href="/online_shoping-master/catdetails.xhtml">商品分类</a>
+                                    </li> 
+                                    <li class="dropdown"><a href="#">校园动态<i class="fa fa-angle-down"></i></a>
+                                        <ul role="menu" class="sub-menu">
+                                            <li><a href="http://xiaoban.qdu.edu.cn/index/qddt1.htm" target="_blank">最新动态</a></li>
+                                            <li><a href="http://www.qdu.edu.cn/" target="_blank">青大主页</a></li>
+                                            <li><a href="http://jw.qdu.edu.cn/homepage/index.do" target="_blank">青大教务</a></li>
+                                            <li><a href="https://weibo.com/u/5955480770" target="_blank">青大表白墙</a></li>
+                                        </ul>
+                                    </li> 
+                                    <li><a href="404.html">关于我们</a></li>
+                                    <li><a href="contact-us.html">联系我们</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="search_box pull-right">
+                               <input type="text" placeholder="搜一搜..."/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/header-bottom-->
+        </header><!--/header-->   
+    </ui:composition>
+</html>

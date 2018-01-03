@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core" 
+    xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+    template="/templates/template.xhtml"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:define name="headScripts">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Products Details</title>
+    </ui:define>    
+
+    <ui:define name="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <h2>分类</h2>
+                        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            运动装备
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="sportswear" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                                  <li><a href="#">耐克 </a></li>
+                                                <li><a href="#">安德玛</a></li>
+                                                <li><a href="#">阿迪 </a></li>
+                                                <li><a href="#">彪马</a></li>
+                                                <li><a href="#">亚瑟士 </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            男生
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="mens" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                                 <li><a href="#">王者账号</a></li>
+                                                <li><a href="#">吃鸡账号</a></li>
+                                                <li><a href="#">健身卡</a></li>
+                                                <li><a href="#">网游代打</a></li>
+                                                <li><a href="#">运动物品</a></li>
+                                                <li><a href="#">其他</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            女生
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="womens" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                                <li><a href="#">化妆品</a></li>
+                                                <li><a href="#">口红</a></li>
+                                                <li><a href="#">高跟鞋</a></li>
+                                                <li><a href="#">正装</a></li>
+                                                <li><a href="#">其他</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">乐器</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">图书</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">衣服</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">裤子</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">鞋子</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">电子数码</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">小物件</a></h4>
+                                </div>
+                            </div>
+                        </div><!--/category-products-->
+
+                        <div class="brands_products"><!--brands_products-->
+                            <h2>今日可竞价</h2>
+                            <div class="brands-name">
+                                <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="#"> <span class="pull-right">(50)</span>校园代步</a></li>
+                                        <li><a href="#"> <span class="pull-right">(56)</span>电子数码</a></li>
+                                        <li><a href="#"> <span class="pull-right">(27)</span>衣物鞋子</a></li>
+                                        <li><a href="#"> <span class="pull-right">(32)</span>图书资料</a></li>
+                                        <li><a href="#"> <span class="pull-right">(5)</span>门票券务</a></li>
+                                        <li><a href="#"> <span class="pull-right">(9)</span>小物件</a></li>
+                                        <li><a href="#"> <span class="pull-right">(4)</span>其他</a></li>
+                                </ul>
+                            </div>
+                        </div><!--/brands_products-->
+
+                            <div class="price-range"><!--price-range-->
+                                <h2>心理可承受</h2>
+                                <div class="well text-center">
+                                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="20" data-slider-value="[250,450]" id="sl2" ><br />
+                                        <b class="pull-left">￥ 0</b> <b class="pull-right">￥ 1000</b>
+                                    </input>
+                                </div>
+                            </div><!--/price-range-->
+
+                                <div class="price-range">
+                                <div class="well text-center">
+                                   <img src="images/home/shipping1.png" alt="" />
+                                </div>
+                            </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="product-details"><!--product-details-->
+                        <div class="col-sm-5">
+                            <div class="view-product">
+                                <img src="${request.contextPath}/images/product-details/1.jpg" alt="" ></img>
+                                <h3>放大看看</h3>
+                            </div>
+                            <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar1.jpg" alt=""></img></a>
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar2.jpg" alt=""></img></a>
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar3.jpg" alt=""></img></a>
+                                    </div>
+                                    <div class="item">
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar1.jpg" alt=""></img></a>
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar2.jpg" alt=""></img></a>
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar3.jpg" alt=""></img></a>
+                                    </div>
+                                    <div class="item">
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar1.jpg" alt=""></img></a>
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar2.jpg" alt=""></img></a>
+                                        <a href=""><img src="${request.contextPath}/images/product-details/similar3.jpg" alt=""></img></a>
+                                    </div>
+
+                                </div>
+
+                                <!-- Controls -->
+                                <a class="left item-control" href="#similar-product" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <a class="right item-control" href="#similar-product" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="product-information"><!--/product-information-->
+                                <img src="${request.contextPath}/images/product-details/new.jpg" class="newarrival" alt="" />
+                                <h2>平凡的世界</h2>
+                                <p>物品 ID: 1089772</p>
+                                <img src="${request.contextPath}/images/product-details/rating.png" alt="" />
+                                <span>
+                                    <span>限时 ￥99</span>
+                                    <label>数量:</label>
+                                    <input type="text" value="1" ></input>
+                                    <button type="button" class="btn btn-fefault cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        加入购物车
+                                    </button>
+                                </span>
+                                <p><b>品牌:</b> 新华书店出版社</p>
+                                <p><b>卖家介绍:</b> 珍藏版没舍得看，即将毕业，低价转手</p>
+                                <p><b>竞价:</b> 不可竞价（中心校区包邮）</p>
+                              
+                            </div><!--/product-information-->
+                        </div>
+                    </div><!--/product-details-->
+
+                    <div class="category-tab shop-details-tab"><!--category-tab-->
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <li><a href="#details" data-toggle="tab">宝贝详情</a></li>
+                                <li><a href="#companyprofile" data-toggle="tab">卖家信用</a></li>
+                                <li><a href="#tag" data-toggle="tab">联系客服</a></li>
+                                <li class="active"><a href="#reviews" data-toggle="tab">评论区</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="details" >
+                                <h1> -- 物品信息 -- </h1>
+                                <p>....</p>
+
+                            </div>
+                            <div>
+                                <h3>珍藏版没舍得看，即将毕业，低价转手</h3>
+                            </div>
+                            <div class="tab-pane fade" id="companyprofile" >
+                                <hr/>
+                                <h4>
+                                    用户 bigbabol : 卖家人挺好的，买过他的书，保存的都挺好，而且多才多艺，值得交往
+                                </h4>
+                                <hr/>
+                                <h4>
+                                    <h:messages id='message' style='background-color: white'/>
+                                </h4>
+                                
+                                
+                            </div>
+
+                            <div class="tab-pane fade" id="tag" >
+                                
+                                <h4>小二淘客服电话：10086</h4>
+                                <h5>您的监督和支持将是我们成长路上最大的动力</h5>
+                            </div>
+
+                            <div class="tab-pane fade active in" id="reviews" >
+                                <div class="col-sm-12">                                 
+
+                                    <h:form>
+                                    <hr/>
+                                    评论区：
+                                    <h:messages id='messages'/>
+                                    <hr/>
+                                     <ul>
+                                        <li><a href=""><i class="fa fa-user"></i>XiaoDi</a></li>
+                                        <li><a href=""><i class="fa fa-clock-o"></i>下午12:41</a></li>
+                                        <li><a href=""><i class="fa fa-calendar-o"></i>2017-12-31</a></li>
+                                    </ul>
+                                    <p>您可以在下面发表对该商品的评论或看法.</p>
+                                    <p><b>要填写必要信息哦</b></p>
+                                        <span>
+                                            <h:inputText value="#{messageManager.userName}" a:placeholder="用户名"/>
+                                            <input type="text" placeholder="电话（放心，我们不会泄露电话信息"/>
+                                        </span>
+                                    <h:inputTextarea id="userMessage" value="#{messageManager.userMessage}" />
+                                        <b>评价: </b> <img src="${request.contextPath}/images/product-details/rating.png" alt="" />
+                                        <p:commandButton
+                                            value="发表"
+                                            action="#{messageManager.addMessage()}"
+                                            ajax="false"
+                                            styleClass="btn btn-default pull-right"
+                                            />
+<!--                                    <button type="button" class="btn btn-default ">
+                                            发表
+                                        </button>-->
+                                    </h:form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!--/category-tab-->
+
+                    <div class="recommended_items"><!--recommended_items-->
+                        <h2 class="title text-center">今日推荐--手慢无！</h2>
+
+                        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">	
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="${request.contextPath}/images/home/recommend1.jpg" alt="" />
+                                                    <h2>￥29</h2>
+                                                    <p>今日限时折扣</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="${request.contextPath}/images/home/recommend2.jpg" alt="" />
+                                                    <h2>￥29</h2>
+                                                    <p>今日限时折扣</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="${request.contextPath}/images/home/recommend3.jpg" alt="" />
+                                                    <h2>￥29</h2>
+                                                    <p>今日限时折扣</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">	
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="${request.contextPath}/images/home/recommend1.jpg" alt="" />
+                                                    <h2>￥29</h2>
+                                                    <p>今日限时折扣</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="${request.contextPath}/images/home/recommend2.jpg" alt="" />
+                                                    <h2>￥29</h2>
+                                                    <p>今日限时折扣</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="${request.contextPath}/images/home/recommend3.jpg" alt="" />
+                                                    <h2>￥29</h2>
+                                                    <p>今日限时折扣</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>加入购物车</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>			
+                        </div>
+                    </div><!--/recommended_items-->
+
+                </div>
+            </div>
+        </div>  
+    </ui:define>
+
+</ui:composition>

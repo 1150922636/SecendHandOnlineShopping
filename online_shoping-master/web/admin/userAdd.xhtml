@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="headScripts">
+                <title>Login Page</title>
+            </ui:define>
+            <ui:define name="content">
+                
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-1">
+                                <div class="login-form"><!--login form-->
+                                   <h1>#{login.getUser().username},欢迎您</h1>
+                                   <h:form enctype="multipart/form-data">
+                                        <p:messages id="msg" closable="true" showDetail="true">
+                                        </p:messages>
+                                        <p:panelGrid columns="2">
+                                            <h:outputLabel value="物品种类"></h:outputLabel>
+                                            <p:inputText value="#{productManager.subcat.subCatName}"></p:inputText>
+                                            <h:outputLabel value="种类描述"></h:outputLabel>
+                                            <p:inputText value="#{productManager.subcat.subCatDesc}"></p:inputText>
+                                            <h:outputLabel value="物品名称"></h:outputLabel>
+                                            <p:inputText value="#{productManager.product.prodName}"></p:inputText>
+                                            <h:outputLabel value="物品数量"></h:outputLabel>
+                                            <p:inputText value="#{productManager.product.prodQty}"></p:inputText>
+                                            <h:outputLabel value="物品价格"></h:outputLabel>
+                                            <p:inputText value="#{productManager.product.prodPrice}"></p:inputText>
+                                            <h:outputLabel value="选择一张物品照片:"></h:outputLabel>
+                                            <p:fileUpload value="#{productManager.image}" mode="simple"/>
+                                            <h:outputLabel value="物品描述"></h:outputLabel>
+                                            <p:inputTextarea value="#{productManager.product.prodDesc}"></p:inputTextarea>
+                                        </p:panelGrid>
+                                        <p:commandButton action="#{productManager.addProduct()}" 
+                                                         value="现在发布" update="msg" ajax="false">
+                                        </p:commandButton>
+                                    </h:form>
+                                </div><!--/login form-->
+                            </div>
+                        </div>
+                    </div>
+     
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>
